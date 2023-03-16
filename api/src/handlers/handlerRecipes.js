@@ -7,7 +7,7 @@ const getRecipesHandler = async(req, res)=>{
     const { title } = req.query;
     try {
         const getRecipes = title ? await getRecipesByName(title) : await concatAllRecipes()
-        title && getRecipes.length > 0 ?  res.status(200).json(getRecipes) : res.status(400).json('Sorry, the recipe does not exist') ;
+        res.status(200).json(getRecipes)
     } catch (error) {
         res.status(400).json({error: error.message})
     }

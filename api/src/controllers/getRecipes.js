@@ -7,12 +7,11 @@ const getRecipesApi = async () =>{
     let url = `https://api.spoonacular.com/recipes/complexSearch?number=100&apiKey=${API_KEY}&addRecipeInformation=true`
     let allRecipesList = await axios.get(url)
     allRecipesList.data.results.map(r => {
-        
         allRecipes.push({
             id: r.id,
             title: r.title,
             image: r.image,
-            summary: r.summary,
+            summary: r.summary.replace(/<\/?[^>]+(>|$)/g, ""),
             healthScore: r.healthScore,
             steps: r.analyzedInstructions.map(s => s.steps.map(s => s.step)),
             diets: r.diets.map(d=> d),
@@ -38,7 +37,7 @@ const getRecipesDb = async() =>{
             id: r.id,
             title: r.title,
             image: r.image,
-            summary: r.summary,
+            summary: r.summary.replace(/<\/?[^>]+(>|$)/g, ""),
             healthScore: r.healthScore,
             steps: r.steps,
             diets: r.diets.map(d=> d),
