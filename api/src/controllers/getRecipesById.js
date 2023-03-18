@@ -6,7 +6,6 @@ const { API_KEY } = process.env
 const getRepiceIdApi = async(id) =>{
     let recipeId = []
     let recipeApiId = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`);
-    console.log(recipeApiId.data.id)
     const info = recipeApiId.data
     recipeId.push({
         id: info.id,

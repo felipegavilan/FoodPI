@@ -8,12 +8,16 @@ const postRecipe = async( title, summary, healthScore, steps, diets, image ) =>{
         steps,
         image,
     })
-        const dietsDb = await Diets.findAll({
+
+
+       diets.forEach(async ele =>{
+        const [diets] = await Diets.findOrCreate({
             where:{
-                name: [diets]
+                name: [ele]
             }
         })
-        await newRecipe.addDiets(dietsDb)
+        await newRecipe.addDiets(diets)
+       })
 
         return newRecipe
     }
