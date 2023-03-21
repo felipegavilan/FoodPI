@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://www.semana.com/resizer/3MNQCHuzFHQKXenEecjTibP54XM=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/U5TJEGP3OBBH7ALKYYCQMS452A.jpg');
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 code {

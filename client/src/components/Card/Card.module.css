@@ -1,0 +1,56 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    text-decoration-line: none;
+  }
+  
+  .card {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    text-decoration-line: none;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .name {
+    background-color: #fff;
+    padding: 10px;
+    text-decoration-line: none;
+  }
+  
+  .name h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-decoration-line: none;
+  }
+  
+  .image img {
+    width: 95%;
+    height: 140px;
+    object-fit: cover;
+  }
+
+.diets{
+    background-color: #fff;
+}
+
+.diets h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+  }

@@ -6,8 +6,12 @@ import Detail from './components/Detail/Detail'
 import Form from './components/Form/Form'
 import Nav from './components/Nav/Nav'
 
+
 function App() {
   const location = useLocation()
+  
+
+  
 
   return (
     <div className="App">

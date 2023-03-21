@@ -1,0 +1,39 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.button {
+
+    border-radius: 8px;
+    width: 50vh;
+    height: 5vh;
+    /* border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    background-image: url("../../fondo/ramen-png.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 16px; */
+  }
+
+  .button:hover{
+    cursor: pointer;
+  }
+  
+
+  
+ 
+  
+  

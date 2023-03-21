@@ -1,7 +1,24 @@
-
-const Cards = () =>{
+import Card from '../Card/Card'
+import style from './Cards.module.css'
+const Cards = ({currentRecipes}) =>{
     return(
-        <div> Esto es Cards</div>
+        <div className={style.container}>
+        {
+            currentRecipes.map(r => {
+                return(
+                    <div id={r.id} className={style.card} >
+                        <Card
+                        id={r.id}
+                        title={r.title}
+                        image={r.image}
+                        diets={r.diets}
+                        />
+                    </div>
+                    
+                )
+            })
+        }
+        </div>
     )
 }
 
