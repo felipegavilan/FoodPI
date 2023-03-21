@@ -1,0 +1,71 @@
+.containerDetail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+ 
+  .datos {
+    display: inline-block;
+    flex-wrap: wrap;
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  .div2{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .img {
+    grid-row: 2 / 4;
+  }
+  
+  .summary {
+    grid-column: 2 / -1;
+    justify-content: flex-start;
+    text-align: justify;
+  }
+  
+  .healthScore {
+    display: flex;
+    border-radius: 50px;
+  }
+  
+  .steps {
+    grid-column: 1 / -1;
+    text-align: justify;
+  }
+  li{  
+      list-style-type: decimal;
+      font-size: 16px;
+      font-weight: bold;
+  }
+
+  .steps h4{
+    text-align: center;
+    
+  }
+  
+  .diets {
+    grid-column: 1 / -1;
+  }
+  .li{
+    border: 1px solid black;
+    margin: 3px;
+    padding: 5px;
+    
+  }
+  .diets li{
+    
+    list-style-type: none;
+  }
+  

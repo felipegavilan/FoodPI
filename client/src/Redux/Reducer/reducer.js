@@ -1,5 +1,5 @@
 
-import { GET_DIETS, GET_RECIPES } from '../Actions/types'
+import { GET_DIETS, GET_ID, GET_RECIPES } from '../Actions/types'
 
 const initialState ={
     recipes:[],
@@ -21,6 +21,11 @@ const rootReducer = (state = initialState, {type, payload}) =>{
             return{
                 ...state,
                 diets: payload
+            }
+        case GET_ID:
+            return{
+                ...state,
+                detail: payload
             }
         default:
             return state

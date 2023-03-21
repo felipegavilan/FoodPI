@@ -20,8 +20,9 @@
   }
   
   .card:hover {
+    cursor:pointer;
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   }
   
   .name {
@@ -35,7 +36,7 @@
     font-size: 20px;
     font-weight: 600;
     color: #333;
-    text-decoration-line: none;
+    text-decoration: none;
   }
   
   .image img {
@@ -45,11 +46,19 @@
   }
 
 .diets{
-    background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:flex-start;
+  background-color: #fff;
+  text-align: justify;
 }
 
-.diets h2 {
-    margin: 0;
+.diets div {
+  border: 1px solid rgb(235, 185, 110);
+  border-radius: 6px;
+  padding: 2px;
+    margin: 3px;
     font-size: 15px;
     font-weight: 600;
     color: #333;
