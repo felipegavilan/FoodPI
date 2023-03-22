@@ -13,7 +13,6 @@ const Detail = () =>{
     },[])
     const recipeId = useSelector(state => state.detail)
     const res = recipeId[0]
-    console.log(res);
     return(
         <div>
             <div className={style.containerDetail} > 

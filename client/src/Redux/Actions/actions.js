@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_RECIPES, GET_DIETS, GET_ID } from "./types";
+import { GET_RECIPES, GET_DIETS, GET_ID, GET_NAME } from "./types";
 
 export const getRecipes = () =>{
 
@@ -34,6 +34,17 @@ export const getId = (id) =>{
         dispatch({
             type: GET_ID,
             payload: idRecipe
+        })
+    }
+}
+
+export const getSearch = (title) =>{
+    return async function(dispatch){
+       const recipeTitle = await axios.get(`http://localhost:3001/recipes?title=${title}`)
+       const searchRecipe = recipeTitle.data
+        dispatch({
+            type: GET_NAME,
+            payload: searchRecipe
         })
     }
 }

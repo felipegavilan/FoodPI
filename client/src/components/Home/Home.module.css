@@ -1,0 +1,19 @@
+.containerFilter{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.searchBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .orderDiets, .orderAlph, .orderApiBdd :hover{
+    cursor: pointer;
+} */
+
+
+

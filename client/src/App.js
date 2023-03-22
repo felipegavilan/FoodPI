@@ -9,9 +9,7 @@ import Nav from './components/Nav/Nav'
 
 function App() {
   const location = useLocation()
-  
-
-  
+ 
 
   return (
     <div className="App">
@@ -24,6 +22,7 @@ function App() {
             <Route path='/form' element={ <Form /> } />
           </Routes>
       </div>
+          
     </div>
   );
 }

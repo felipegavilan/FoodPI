@@ -4,18 +4,23 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import {getRecipes, getDiets} from '../../Redux/Actions/actions'
 import Paginate from '../Paginate/Paginate';
+import style from './Home.module.css'
+import SearchBar from '../SearchBar/SearchBar';
+
 
 const Home = () =>{
     
     const dispatch = useDispatch()
-
+    
     useEffect(()=>{
         dispatch(getRecipes())
+        // eslint-disable-next-line
     },[dispatch])
 
     useEffect(()=>{
         dispatch(getDiets())
-    },[dispatch])
+        // eslint-disable-next-line
+    },[])
 
     const recipes = useSelector(state => state.recipes)
     const diets = useSelector(state=>state.diets)
@@ -31,20 +36,49 @@ const Home = () =>{
     const paginate = number =>{
         setCurrentPage(number)
     }
+   
 
     return(
         <div>
-            <div>
-            <select  defaultValue='default' >
-                    <option value="default" disabled >Select by diet type</option>
-                    {
-                        diets && diets.map(d => (
-                            <option value={d.name} key={d.id}>{d.name}</option>
-                        ))
-                    }
-                </select>
+
+            <div className={style.searchBar}>
+                <SearchBar paginate={paginate}/>
             </div>
-            <div>
+            <div className={style.containerFilter}>
+                <div className={style.containerOrderDiets}>
+                    
+                <select  defaultValue='Diets' >
+                        <option  disabled >Select by diet type</option>
+                        {
+                            diets && diets.map(d => (
+                                <option value={d.name} key={d.id}>{d.name}</option>
+                            ))
+                        }
+                    </select>
+                </div>
+                <div className={style.orderAlph}>
+                    <select  defaultValue='Alph'>
+                        <option  disabled >Select Order</option>
+                        <option value='Up'>Upward</option>
+                        <option value='Down'>Falling</option>
+                    </select>
+                </div>
+                <div className={style.orderApiBdd}>
+                    <select defaultValue='ApiBdd'>
+                        <option  disabled >Select filter Api or Bdd</option>
+                        <option value="Api">Api</option>
+                        <option value="Bdd">Bdd</option>
+                    </select>
+                </div>
+                <div className={style.healthScore}>
+                    <select defaultValue='score'>
+                        <option  disabled >Health Score</option>
+                        <option value='asc'>Upward</option>
+                        <option value='desc'>Falling</option>
+                    </select>
+                </div>
+            </div>
+            <div className={style.paginate}>
                 <Paginate
                 recipesPerPage={recipesPerPage}
                 recipes={recipes?.length}
