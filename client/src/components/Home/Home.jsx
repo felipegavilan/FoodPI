@@ -2,7 +2,7 @@
 import Cards from '../Cards/Cards'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import {getRecipes, getDiets} from '../../Redux/Actions/actions'
+import {getRecipes, getDiets, filterByName, filterByDiets, filterHealthScore} from '../../Redux/Actions/actions'
 import Paginate from '../Paginate/Paginate';
 import style from './Home.module.css'
 import SearchBar from '../SearchBar/SearchBar';
@@ -37,6 +37,27 @@ const Home = () =>{
         setCurrentPage(number)
     }
    
+    const handlerClick = (e) =>{
+        const {name, value} = e.target;
+
+        switch(name){
+            case 'orderAlph':
+                return dispatch(filterByName(value))
+            case 'diets':
+                if(value === 'all'){
+                    dispatch(getRecipes())
+                } 
+                    return dispatch(filterByDiets(value))
+            case 'score':
+                return dispatch(filterHealthScore(value))
+                default: return null
+        }
+    }
+    
+    // const handlerOrderByName = (e) =>{
+    //     const { value } = e.target;
+    //    dispatch(filterByName(value))
+    // }
 
     return(
         <div>
@@ -47,8 +68,9 @@ const Home = () =>{
             <div className={style.containerFilter}>
                 <div className={style.containerOrderDiets}>
                     
-                <select  defaultValue='Diets' >
-                        <option  disabled >Select by diet type</option>
+                <select  name='diets' onChange={handlerClick} >
+                        <option  disabled >Diets</option>
+                        <option  value='all' >All</option>
                         {
                             diets && diets.map(d => (
                                 <option value={d.name} key={d.id}>{d.name}</option>
@@ -57,24 +79,24 @@ const Home = () =>{
                     </select>
                 </div>
                 <div className={style.orderAlph}>
-                    <select  defaultValue='Alph'>
-                        <option  disabled >Select Order</option>
-                        <option value='Up'>Upward</option>
-                        <option value='Down'>Falling</option>
+                    <select name='orderAlph' onChange={handlerClick} >
+                        <option  disabled >Select Order Alph</option>
+                        <option value='asc'>A-z</option>
+                        <option value='desc'>Z-a</option>
                     </select>
                 </div>
                 <div className={style.orderApiBdd}>
-                    <select defaultValue='ApiBdd'>
+                    <select name='ApiBdd'>
                         <option  disabled >Select filter Api or Bdd</option>
                         <option value="Api">Api</option>
                         <option value="Bdd">Bdd</option>
                     </select>
                 </div>
                 <div className={style.healthScore}>
-                    <select defaultValue='score'>
+                    <select name='score' onChange={handlerClick}>
                         <option  disabled >Health Score</option>
-                        <option value='asc'>Upward</option>
-                        <option value='desc'>Falling</option>
+                        <option value='up'>Upward</option>
+                        <option value='down'>Falling</option>
                     </select>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_RECIPES, GET_DIETS, GET_ID, GET_NAME } from "./types";
+import { GET_RECIPES, GET_DIETS, GET_ID, GET_NAME, FILTER_BY_NAME, FILTER_BY_DIETS, FILTER_BY_HEALTH_SCORE, POST_RECIPES } from "./types";
 
 export const getRecipes = () =>{
 
@@ -48,4 +48,33 @@ export const getSearch = (title) =>{
         })
     }
 }
+
+export const filterByName = (payload) =>{
+    return {
+            type: FILTER_BY_NAME,
+            payload
+        }
+    }
+
+export const filterByDiets = (payload) =>{
+    return{
+        type: FILTER_BY_DIETS,
+        payload
+    }
+}
+
+export const filterHealthScore = (payload) =>{
+    return {
+        type: FILTER_BY_HEALTH_SCORE,
+        payload
+    }
+}
+
+export const postRecipes = (payload) =>{
+    return{
+        type: POST_RECIPES,
+        payload
+    }
+}
+
 

@@ -1,0 +1,30 @@
+.container{
+
+}
+.dietsContainer{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px;
+}
+.diets{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Define 3 columnas con el mismo ancho */
+    grid-gap: 10px; /* Define un espacio entre las cajas */
+    text-align: justify;
+    align-items: center;
+   
+}
+.inputsDiets{
+   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: center;
+    text-align: justify;
+    
+}
+
+.dietsContainer label{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
