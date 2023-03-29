@@ -14,10 +14,10 @@ const Card = ({id, title, image, diets}) =>{
                     </div>
                 </Link>
                 <div className={style.diets}> 
-                    {diets.map(ele=>{
+                    {diets.map((ele, i)=>{
                         return(
-                            <div>
-                                {ele}
+                            <div key={i}>
+                                {ele.name || ele}
                             </div>
                         )
                     })}

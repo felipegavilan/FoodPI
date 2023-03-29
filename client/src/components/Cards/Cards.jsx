@@ -6,7 +6,7 @@ const Cards = ({currentRecipes}) =>{
         {
             currentRecipes.map(r => {
                 return(
-                    <div id={r.id} className={style.card} >
+                    <div key={r.id} className={style.card} >
                         <Card
                         id={r.id}
                         title={r.title}

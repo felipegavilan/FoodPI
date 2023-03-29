@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import fondo from '../../fondo/fondo.jpg'
 import style from '../Landing/Landing.module.css'
 
 const Landing = () =>{
@@ -10,7 +9,7 @@ const Landing = () =>{
     }
     return(
         <div  > 
-            <div className={style.container} style={{ backgroundImage: `url(${fondo})` }} >
+            <div className={style.container} >
 
                 <button className={style.button} onClick={handlerNavigate} > RECIPES PAGE </button>
             </div>

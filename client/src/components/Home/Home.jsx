@@ -2,7 +2,7 @@
 import Cards from '../Cards/Cards'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import {getRecipes, getDiets, filterByName, filterByDiets, filterHealthScore} from '../../Redux/Actions/actions'
+import {getRecipes, getDiets, filterByName, filterByDiets, filterHealthScore, filterApiOrBdd} from '../../Redux/Actions/actions'
 import Paginate from '../Paginate/Paginate';
 import style from './Home.module.css'
 import SearchBar from '../SearchBar/SearchBar';
@@ -15,7 +15,7 @@ const Home = () =>{
     useEffect(()=>{
         dispatch(getRecipes())
         // eslint-disable-next-line
-    },[dispatch])
+    },[])
 
     useEffect(()=>{
         dispatch(getDiets())
@@ -32,7 +32,6 @@ const Home = () =>{
     const lastRecipes= firstRecipes + recipesPerPage;
     const currentRecipes = recipes.slice(firstRecipes, lastRecipes )
     
-
     const paginate = number =>{
         setCurrentPage(number)
     }
@@ -50,14 +49,13 @@ const Home = () =>{
                     return dispatch(filterByDiets(value))
             case 'score':
                 return dispatch(filterHealthScore(value))
+            case 'apiBdd':
+                return dispatch(filterApiOrBdd(value))
                 default: return null
         }
     }
     
-    // const handlerOrderByName = (e) =>{
-    //     const { value } = e.target;
-    //    dispatch(filterByName(value))
-    // }
+
 
     return(
         <div>
@@ -85,11 +83,11 @@ const Home = () =>{
                         <option value='desc'>Z-a</option>
                     </select>
                 </div>
-                <div className={style.orderApiBdd}>
-                    <select name='ApiBdd'>
+                <div className={style.orderApiBdd} onChange={handlerClick}>
+                    <select name='apiBdd'>
                         <option  disabled >Select filter Api or Bdd</option>
-                        <option value="Api">Api</option>
-                        <option value="Bdd">Bdd</option>
+                        <option value="api">Api</option>
+                        <option value="bdd">Bdd</option>
                     </select>
                 </div>
                 <div className={style.healthScore}>

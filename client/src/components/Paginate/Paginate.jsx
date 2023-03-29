@@ -10,7 +10,7 @@ const Paginate = ({recipesPerPage, recipes, paginate, currentPage}) =>{
                 <ul>
                     {pageNum && pageNum.map(num => {
                         return(
-                            <div >
+                            <div key={num} >
                                 <li>
                                     <button key={num} 
                                     onClick={()=>paginate(num)}>

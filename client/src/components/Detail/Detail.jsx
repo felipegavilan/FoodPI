@@ -27,7 +27,7 @@ const Detail = () =>{
                 {res?.steps[0] ? <div className={style.steps}> 
                     <h4>Steps</h4> 
                     <ol>
-                        {res?.steps[0]?.map((ele, i)=>{
+                        {res.steps?.map((ele, i)=>{
                             return(
                                 <li key={i}>
                                     {ele}
@@ -47,7 +47,7 @@ const Detail = () =>{
                            return(
                             <div className={style.li} key={i}>
                                 <li>
-                                {ele}
+                                {ele.name || ele}
                                 </li>
                             </div>
                            )

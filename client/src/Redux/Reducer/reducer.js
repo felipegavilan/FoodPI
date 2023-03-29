@@ -1,5 +1,5 @@
 
-import { GET_DIETS, GET_ID, GET_RECIPES, GET_NAME, FILTER_BY_NAME, FILTER_BY_DIETS, FILTER_BY_HEALTH_SCORE} from '../Actions/types'
+import { GET_DIETS, GET_ID, GET_RECIPES, GET_NAME, FILTER_BY_NAME, FILTER_BY_DIETS, FILTER_BY_HEALTH_SCORE, POST_RECIPES, FILTER_BY_API_OR_BDD} from '../Actions/types'
 
 const initialState ={
     recipes:[],
@@ -67,9 +67,25 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 ...state,
                 recipes: filterRecipeHS
             }
-        // case POST_RECIPES:
-        //     return{
-        //     }
+        case POST_RECIPES:
+            return{
+                ...state,
+                
+            }
+        case FILTER_BY_API_OR_BDD:
+            const filterRecipes = state.recipesCopy
+            const filt = []
+            if(payload === 'bdd'){
+                filterRecipes.map(ele => isNaN(ele.id) ? filt.push(ele) : null)
+                
+            } else if (payload === 'api'){
+                filterRecipes.map(ele => !isNaN(ele.id) ? filt.push(ele) : null)
+               
+            }
+            return{
+                ...state,
+                recipes: filt
+            }
         default:
             return state
     }
