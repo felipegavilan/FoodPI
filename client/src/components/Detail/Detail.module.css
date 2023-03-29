@@ -69,3 +69,16 @@
     list-style-type: none;
   }
   
+  .btn button{
+    background-color: #1a202c;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    height: 40px;
+  }

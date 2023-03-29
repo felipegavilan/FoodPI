@@ -1,16 +1,43 @@
-.paginate ul{
+.paginationContainer {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+  }
+  
+  .paginate {
+    display: flex;
     align-items: center;
-    
-}
-
-.paginate li {
-    list-style-type: none;
-    
-}
-
-.paginate button:hover{
+    justify-content: center;
+  }
+  .paginate button:disabled{
+    cursor: no-drop;
+  }
+  
+  .pageBtn {
+    background-color: #1a202c;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    font-size: 16px;
     cursor: pointer;
-}
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pageBtn:hover {
+    background-color: #2d3748;
+  }
+  
+  .prevBtn {
+    margin-right: 16px;
+  }
+  
+  .nextBtn {
+    margin-left: 16px;
+  }
+  
+  .pageNum {
+    font-size: 16px;
+    margin: 0 16px;
+  }
+  

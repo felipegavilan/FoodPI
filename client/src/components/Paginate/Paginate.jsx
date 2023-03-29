@@ -1,31 +1,30 @@
 import style from '../Paginate/Paginate.module.css'
-const Paginate = ({recipesPerPage, recipes, paginate, currentPage}) =>{
+const Paginate = ({recipesPerPage, recipes, paginate, currentPage, handlerPagPrev, handlerPagNext}) =>{
     const pageNum = [];
     for(let i = 1; i<= Math.ceil(recipes / recipesPerPage); i++){
         pageNum.push(i)
     }
     return (
-        <div>
-            <div className={style.paginate}>
-                <ul>
-                    {pageNum && pageNum.map(num => {
-                        return(
-                            <div key={num} >
-                                <li>
-                                    <button key={num} 
-                                    onClick={()=>paginate(num)}>
-                                        {num}
-                                    </button>
-            
-                                </li>
-                            </div>
-                            ) 
-                           
-                        
-                        })}
-                </ul>
-            </div>
+        <div className={style.paginationContainer}>
+        <div className={style.paginate}>
+          <button
+            onClick={handlerPagPrev}
+            disabled={currentPage === 1}
+            className={`${style.pageBtn} ${style.prevBtn}`}
+          >
+            Prev
+          </button>
+          <p className={style.pageNum}>{`${currentPage} of ${pageNum.length}`}</p>
+          <button
+            onClick={handlerPagNext}
+            disabled={currentPage === pageNum.length}
+            className={`${style.pageBtn} ${style.nextBtn}`}
+          >
+            Next
+          </button>
         </div>
+      </div>
+      
         )
 }
 

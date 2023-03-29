@@ -1,16 +1,15 @@
 .container{
     display: flex;
     border: 1px;
-    margin-right: 3px;
-    margin-top:12px;
+    margin: 10px 30px 10px 0px;
     
 }
 
 .input{
-    margin-bottom: 2px;
-    margin-left: 2px;
+    margin: -4px -15px 10px 0px;
     border-radius: 10px;
-    height: 20px;
+    height: 30px;
+    width: 400px;
 }
 
 .container button{
@@ -20,4 +19,9 @@
 
 .container button:hover{
     cursor: pointer;
+}
+
+.container svg:hover{
+    cursor: pointer;
+    color: rgb(214, 199, 67);
 }

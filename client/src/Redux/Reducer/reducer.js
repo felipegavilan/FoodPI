@@ -33,7 +33,7 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 recipes: payload
         }
         case FILTER_BY_NAME:
-            const recipesFilter = payload === 'asc' ?
+            let recipesFilter = payload === 'asc' ?
             state.recipes.sort((a, b)=>{
                 if (a.title > b.title) return 1;
                 if(b.title > a.title) return -1;
@@ -47,25 +47,30 @@ const rootReducer = (state = initialState, {type, payload}) =>{
           
             return{
                 ...state,
-                payload: recipesFilter
+                recipes: [...state.recipes, recipesFilter]
             }
         case FILTER_BY_DIETS:
             const dietsFilter = state.recipesCopy
-            const filtered = []
-            dietsFilter.map(ele => ele.diets.includes(payload) ? filtered.push(ele) : null) 
+
+            let filtered = []
+            if(payload === 'all'){
+                filtered = state.recipesCopy
+            } else{
+                dietsFilter.map(ele => ele.diets.includes(payload) ? filtered.push(ele) : null) 
+            }   
             return{
                 ...state,
                 recipes: filtered
             } 
         case FILTER_BY_HEALTH_SCORE:
-            const filterRecipeHS = state.recipes.sort((a,b) => {
+            let filterRecipeHS = state.recipes.sort((a,b) => {
                 if (payload === 'up') return a.healthScore - b.healthScore
                 if( payload === 'down') return b.healthScore - a.healthScore
                 else return 0
             })
             return{
                 ...state,
-                recipes: filterRecipeHS
+                recipes: [...state.recipes, filterRecipeHS]
             }
         case POST_RECIPES:
             return{
@@ -86,6 +91,7 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 ...state,
                 recipes: filt
             }
+
         default:
             return state
     }

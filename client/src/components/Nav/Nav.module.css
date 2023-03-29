@@ -1,43 +1,56 @@
 .container{
     display: flex;
-    flex-direction: center;
-    flex-direction:row;
-    justify-content: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
+    margin-bottom: 3px;
+    
 }
 .containerBorder{
     display: flex;
     justify-items: center;
     justify-content: center;
     width: 200vh;
-    margin-top: 1px;
+    height: 65px;
+    margin:1px;
     border: 1px solid black;
-    border-radius: 4px;
+    border-radius: 5px;
+    gap: 300px;
+;
 }
 .btnImage{
     border-radius: 3px;
-    width: 50px;
-    height: 45px;
-    margin: 5px;
+    width: 70px;
+    height: 60px;
+    margin: 4px 0px 0px 4px;
     background-image: url("../../fondo/ramen-png.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 60px;
     border: none;
-    color: #fff;
-    font-size: 16px;
-   
+    
 }
 
 .btn{
-    border-radius: 10px;
-    height: 40px;
-   margin: 5px;
-    
+    background-color: #1a202c;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    margin: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
+
+
 
 .btnImage, .btn:hover{
     cursor:pointer
 }
+
+.btn svg{
+    width: 50px;
+    height: auto; 
+}
+
