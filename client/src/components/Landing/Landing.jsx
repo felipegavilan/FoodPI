@@ -16,7 +16,7 @@ const Landing = () => {
           <div className={style.welcome}>
             <h1>WELCOME</h1>
             <h2>TO</h2>
-            <h3>FOOD APP</h3>
+            <h3>THE FOOD APP</h3>
           </div>
           <button className={style.button} onClick={handlerNavigate}>
             LET'S GO!

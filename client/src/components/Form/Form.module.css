@@ -1,5 +1,5 @@
 .container {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -8,17 +8,21 @@
     border-radius: 8px;
     margin-top: 2px;
     padding: 5px;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.8);
   }
   
   .container label {
     margin: 10px 0;
     font-weight: bold;
+    display: flex;
+    flex-direction: initial;
+    margin-left: 10px;
   }
   
   .container input,
   .container textarea {
-    width: 100%;
+    width: 96%;
     padding: 10px;
     margin: 5px 0 20px;
     border: 1px solid #ccc;
@@ -41,10 +45,13 @@
   .container button[type="submit"]:hover {
     background-color: #023e8a;
   }
-  
+  .container button:disabled{
+    cursor: no-drop;
+  }
   .container .errors {
     color: red;
     margin-bottom: 10px;
+    font-style:italic;
   }
 
   .diets {
@@ -55,11 +62,21 @@
   }
 
   .diets p{
- margin: 8px;
-    
+    margin: 8px;
+    font-size: small;
+    font-weight: bold;
+    text-align:start;
   }
   .inputsDiets{
- display: grid;
-  grid-gap: 20px;
+    display: grid;
+    grid-gap: 0px;
+  }
+
+  .inputsDiets input{
+    cursor: pointer;
   }
   
+  .container textarea{
+   resize: none;
+  }
+

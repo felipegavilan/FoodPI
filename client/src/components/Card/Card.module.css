@@ -18,7 +18,12 @@
     background-color: #fff;
     text-decoration-line: none;
   }
-  
+  .card h2{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+  }
   .card:hover {
     cursor:pointer;
     transform: scale(1.05);

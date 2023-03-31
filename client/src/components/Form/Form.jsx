@@ -13,37 +13,31 @@ const Form = () => {
     steps: [],
     diets: [],
   });
-  const [errors, setErrors] = useState({
-    title: "",
-    summary: "",
-    image: "",
-    healthScore: 0,
-    steps: [],
-    diets: [],
-  });
+  const [errors, setErrors] = useState({});
+  
   const dispatch = useDispatch();
   const diets = useSelector((state) => state.diets);
-
   const handlerSubmit = (e) => {
     e.preventDefault();
     if (Object.values(errors).length > 0) alert("Please complete form")
-    else {
+    else { 
         dispatch(postRecipes(formCreate))
         alert('¡Recipe created successfully!')
     }
   };
+  
   const handlerInputChange = (e) => {
     const { name, value } = e.target;
-    setFormCreate({
-      ...formCreate,
-      [name]: value,
-    });
-    setErrors(
-      validate({
-        ...errors,
+      setFormCreate({
+        ...formCreate,
         [name]: value,
-      })
-    );
+      });
+      setErrors(
+        validate({
+          ...formCreate,
+          [name]: value,
+        })
+        );
   };
   //     const handlerDiets = (e) =>{
   //         const { name, checked } = e.target;
@@ -107,7 +101,7 @@ const Form = () => {
     setErrors(
       validate({
         ...formCreate,
-        setps: value,
+        steps: value,
       })
     );
   };
@@ -117,7 +111,7 @@ const Form = () => {
     <div className={style.container}>
       <form onSubmit={handlerSubmit}>
         <div>
-          <label htmlFor="title">Tittle </label>
+          <label htmlFor="title">Tittle* </label>
           <input
             id="title"
             name="title"
@@ -125,10 +119,10 @@ const Form = () => {
             placeholder="title ..."
             onChange={handlerInputChange}
           />
-          <div className={style.errors}>{errors.title}</div>
+        {errors.title &&<div className={style.errors}>{errors.title}</div>}
         </div>
         <div>
-          <label htmlFor="summary">Summary </label>
+          <label htmlFor="summary">Summary* </label>
           <input
             id="summary"
             name="summary"
@@ -137,9 +131,9 @@ const Form = () => {
             onChange={handlerInputChange}
           />
         </div>
-        <div className={style.errors}>{errors.summary}</div>
+       {errors.summary && <div className={style.errors}>{errors.summary}</div>}
         <div>
-          <label htmlFor="image">URL image </label>
+          <label htmlFor="image">URL image* </label>
           <input
             id="image"
             name="image"
@@ -148,9 +142,9 @@ const Form = () => {
             onChange={handlerInputChange}
           />
         </div>
-        <div className={style.errors}>{errors.image}</div>
+        {errors.image && <div className={style.errors}>{errors.image}</div>}
         <div>
-          <label htmlFor="steps">Steps </label>
+          <label htmlFor="steps">Steps* </label>
           <textarea
             id="steps"
             name="steps"
@@ -159,9 +153,9 @@ const Form = () => {
             onChange={handlerSteps}
           />
         </div>
-        <div className={style.errors}>{errors.steps}</div>
-        <div>
-          <label htmlFor="healthScore">HealthScore </label>
+        {errors.steps && <div className={style.errors}>{errors.steps}</div>}
+        <div >
+          <label htmlFor="healthScore">HealthScore* </label>
           <input
             id="healthScore"
             name="healthScore"
@@ -190,9 +184,9 @@ const Form = () => {
             })}
           </div>
         </div>
-        <div className={style.errors}>{errors.diets}</div>
+        {errors.diets && <div className={style.errors}>{errors.diets}</div>}
         <div>
-          <button type="submit" > Create </button>
+          <button type="submit" disabled={Object.values(errors).length > 0}> Create </button>
         </div>
       </form>
     </div>
