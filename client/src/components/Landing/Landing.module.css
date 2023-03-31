@@ -60,9 +60,12 @@
   }
 
   .button:hover{
-    cursor: pointer;
-    background-color: rgb(92, 99, 104);
-    color: black;
+    cursor:pointer;
+    background-color: #f8fa7b;
+    color: #1a202c;
+    border: 0.5px solid #e9e9f0;
+    font-weight: bold;
+    width: 40vh;
     box-shadow: 5px 8px 10px rgb(247, 250, 249);
   }
   

@@ -17,17 +17,17 @@
 ;
 }
 .btnImage{
-    border-radius: 3px;
     width: 70px;
     height: 60px;
-    margin: 4px 0px 0px 4px;
+    margin: 2.5px 0px 0px 2px;
     background-image: url("../../fondo/ramen-png.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 10px 20px;
-    border-radius: 60px;
+    padding: 20px;
+    border-radius: 10px;
     border: none;
+
     
 }
 
@@ -45,8 +45,11 @@
 
 
 
+
 .btnImage, .btn:hover{
-    cursor:pointer
+    cursor:pointer;
+    background-color: #d6ee4f;
+    color: #1a202c;
 }
 
 .btn svg{
@@ -54,3 +57,15 @@
     height: auto; 
 }
 
+.btnActive{
+    background-color: #e2f06b;
+    color: #1b1919;
+    border: none;
+    border: 1px solid #161718;
+    padding: 6px 12px;
+    margin: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}

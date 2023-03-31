@@ -1,17 +1,20 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import style from "../Nav/Nav.module.css";
 
 const Nav = () => {
   const navigate = useNavigate();
+  const location = useLocation()
+
+
 
   return (
     <div className={style.container}>
       <div className={style.containerBorder}>
         <button
-          onClick={() => navigate("/home")}
+          onClick={() => navigate('/home')}
           className={style.btnImage}
         ></button>
-        <button onClick={() => navigate("/home")} className={style.btn}>
+        <button onClick={() => navigate('/home')} className={location.pathname === '/home' ? style.btnActive :style.btn}>
           <svg
             width="46"
             height="46"
@@ -26,12 +29,9 @@ const Nav = () => {
             ></path>
           </svg>
         </button>
-        <button onClick={() => navigate("/form")} className={style.btn}>
+        <button onClick={() => navigate('/form')} className={location.pathname === '/form' ? style.btnActive :style.btn}>
           Create Recipe
         </button>
-        {/* <div>
-                <SearchBar/>
-            </div> */}
       </div>
     </div>
   );

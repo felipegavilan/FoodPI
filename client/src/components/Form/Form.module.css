@@ -34,16 +34,20 @@
   }
   
   .container button[type="submit"] {
-    background-color: #0077b6;
+    background-color: #1a202c;
     color: #fff;
-    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    padding: 8px 14px;
+    margin: 2px;
+    font-size: 17px;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
   }
   
   .container button[type="submit"]:hover {
-    background-color: #023e8a;
+    background-color: #d6ee4f;
+    color: #1a202c;
   }
   .container button:disabled{
     cursor: no-drop;

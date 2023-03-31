@@ -60,11 +60,12 @@
 }
 
 .diets div {
-  border: 1px solid rgb(235, 185, 110);
   border-radius: 6px;
-  padding: 2px;
-    margin: 3px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #333;
+  padding: 3px;
+  margin: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  background-color: #e7f598;
+  color: #1a202c;
   }

@@ -88,8 +88,8 @@ const Home = () => {
         <div className={style.orderAlph}>
           <select name="orderAlph" onChange={handlerClick}>
             <option disabled>Alphabetical order</option>
-            <option value="asc">Asc A-Z</option>
-            <option value="desc">Desc Z-A</option>
+            <option value="asc">⬆ a-Z </option>
+            <option value="desc">⬇ Z-a </option>
           </select>
         </div>
         <div className={style.orderApiBdd} onChange={handlerClick}>
@@ -102,8 +102,8 @@ const Home = () => {
         <div className={style.healthScore}>
           <select name="score" onChange={handlerClick}>
             <option disabled>Health Score</option>
-            <option value="up">Upward</option>
-            <option value="down">Falling</option>
+            <option value="up">⬆ Upward</option>
+            <option value="down">⬇ Falling</option>
           </select>
         </div>
       </div>
