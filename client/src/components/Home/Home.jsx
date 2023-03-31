@@ -14,17 +14,14 @@ import style from "./Home.module.css";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
-    dispatch(getRecipes());
-    // eslint-disable-next-line
+    dispatch(getDiets())
+    dispatch(getRecipes())
+    // eslint-disable-next-line 
   }, []);
 
-  useEffect(() => {
-    dispatch(getDiets());
-    // eslint-disable-next-line
-  }, []);
 
   const recipes = useSelector((state) => state.recipes);
   const diets = useSelector((state) => state.diets);

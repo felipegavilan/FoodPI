@@ -9,12 +9,14 @@
 .containerFilter {
     display: flex;
     align-items: center;
+    align-content: center;
+    justify-content: center;
     margin-bottom: 20px;
     padding: 0 20px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
-  
-  .containerFilter select {
+
+  .containerFilter select{
     margin-left: 10px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -23,13 +25,10 @@
     color: #555;
     font-size: 16px;
     width: 100%;
+    cursor: pointer;
   }
   
-  .containerFilter select:focus {
-    outline: none;
-    border-color: #0077cc;
-    box-shadow: 0 0 3px #0077cc;
-  }
+
 
   .searchBar{
     display: flex;

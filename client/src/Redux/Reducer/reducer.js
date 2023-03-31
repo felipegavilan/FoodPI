@@ -5,7 +5,7 @@ const initialState ={
     recipes:[],
     recipesCopy:[],
     diets:[],
-    detail:[]
+    detail:[],
 }
 
 const rootReducer = (state = initialState, {type, payload}) =>{
@@ -91,7 +91,6 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 ...state,
                 recipes: filt
             }
-
         default:
             return state
     }

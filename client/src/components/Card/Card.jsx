@@ -14,7 +14,7 @@ const Card = ({id, title, image, diets}) =>{
                     </div>
                 </Link>
                 <div className={style.diets}> 
-                    {diets.map((ele, i)=>{
+                    {diets?.map((ele, i)=>{
                         return(
                             <div key={i}>
                                 {ele.name || ele}
