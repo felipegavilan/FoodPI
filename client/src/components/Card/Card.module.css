@@ -4,9 +4,8 @@
     justify-content: center;
     gap: 20px;
     position: relative;
-    text-decoration-line: none;
+    text-decoration-line:none;
   }
-  
   .card {
     display: inline-block;
     width: 300px;
@@ -20,7 +19,7 @@
   }
   .card h2{
     white-space: nowrap;
-    overflow: hidden;
+    overflow:hidden;
     text-overflow: ellipsis;
     margin-bottom: 5px;
   }
@@ -69,3 +68,14 @@
   background-color: #e7f598;
   color: #1a202c;
   }
+
+
+.card .btnFav{
+  display: inline-block;
+  justify-content: end;
+  border: 1px solid rgb(208, 243, 111);
+  border-radius: 50px;
+  background-color: #e7f598;
+  cursor: pointer;
+  margin-top: 3px;
+}

@@ -1,11 +1,12 @@
 
-import { GET_DIETS, GET_ID, GET_RECIPES, GET_NAME, FILTER_BY_NAME, FILTER_BY_DIETS, FILTER_BY_HEALTH_SCORE, POST_RECIPES, FILTER_BY_API_OR_BDD} from '../Actions/types'
+import { GET_DIETS, GET_ID, GET_RECIPES, GET_NAME, FILTER_BY_NAME, FILTER_BY_DIETS, FILTER_BY_HEALTH_SCORE, POST_RECIPES, FILTER_BY_API_OR_BDD, FAVORITE, DELETE} from '../Actions/types'
 
 const initialState ={
     recipes:[],
     recipesCopy:[],
     diets:[],
     detail:[],
+    favorites:[],
 }
 
 const rootReducer = (state = initialState, {type, payload}) =>{
@@ -90,6 +91,20 @@ const rootReducer = (state = initialState, {type, payload}) =>{
             return{
                 ...state,
                 recipes: filt
+            }
+        case FAVORITE:
+            const recipes = state.recipes
+            const filterFav = recipes.filter(ele => ele.id === payload ? ele : null)
+            return{
+                ...state,
+                favorites:[...state.favorites, filterFav]
+            }
+        case DELETE:
+            const fav = state.favorites
+            const deleteFavorite = fav.filter(ele=> ele[0].id !== payload) 
+            return{
+                ...state,
+                favorites: deleteFavorite
             }
         default:
             return state

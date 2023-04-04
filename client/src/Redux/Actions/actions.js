@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_RECIPES, GET_DIETS, GET_ID, GET_NAME, FILTER_BY_NAME, FILTER_BY_DIETS, FILTER_BY_HEALTH_SCORE, FILTER_BY_API_OR_BDD } from "./types";
+import { GET_RECIPES, GET_DIETS, GET_ID, GET_NAME, FILTER_BY_NAME, FILTER_BY_DIETS, FILTER_BY_HEALTH_SCORE, FILTER_BY_API_OR_BDD, FAVORITE, DELETE } from "./types";
 
 export const getRecipes = () =>{
 
@@ -81,6 +81,20 @@ export const postRecipes = (payload) =>{
 export const filterApiOrBdd = (payload) =>{
     return {
         type: FILTER_BY_API_OR_BDD,
+        payload
+    }
+}
+
+export const addFavorite = (payload) =>{
+    return {
+        type: FAVORITE,
+        payload
+    }
+}
+
+export const deleteFav = (payload) =>{
+    return {
+        type: DELETE,
         payload
     }
 }

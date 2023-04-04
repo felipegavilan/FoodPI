@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -19,11 +20,13 @@ const Detail = () => {
     navigate(-1)
 }
 
+
+
   return (
     <div>
       <div className={style.containerDetail}>
         <div className={style.datos}>
-          <div>{res?.healthScore}</div>
+         { res?.healthScore >= 50 ? <div className={res?.healthScore >= 80? style.healthScore : style.healthScore2 }>{res?.healthScore}</div> : <div className={style.healthScore3 }>{res?.healthScore}</div>}
           <h2>{res?.title}</h2>
         </div>
         <div className={style.summary}>

@@ -35,6 +35,7 @@ const SearchBar = ({ paginate }) => {
         placeholder="Recipe..."
         className={style.input}
         onChange={(e) => handlerChange(e)}
+        
       />
     </div>
     <svg

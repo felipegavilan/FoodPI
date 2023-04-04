@@ -10,10 +10,13 @@ const Nav = () => {
   return (
     <div className={style.container}>
       <div className={style.containerBorder}>
-        <button
+        {/* <button
           onClick={() => navigate('/home')}
           className={style.btnImage}
-        ></button>
+        ></button> */}
+        <button onClick={() => navigate('/favorites')} className={location.pathname === '/favorites' ? style.btnActive :style.btn}>
+          Favorites
+        </button>
         <button onClick={() => navigate('/home')} className={location.pathname === '/home' ? style.btnActive :style.btn}>
           <svg
             width="46"

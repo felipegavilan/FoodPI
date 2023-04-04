@@ -17,12 +17,14 @@ const Form = () => {
   
   const dispatch = useDispatch();
   const diets = useSelector((state) => state.diets);
+  
   const handlerSubmit = (e) => {
     e.preventDefault();
     if (Object.values(errors).length > 0) alert("Please complete form")
+   
     else { 
-        dispatch(postRecipes(formCreate))
-        alert('¡Recipe created successfully!')
+      dispatch(postRecipes(formCreate))
+      alert('¡Recipe created successfully!')
     }
   };
   
@@ -105,6 +107,7 @@ const Form = () => {
       })
     );
   };
+
 
  
   return (

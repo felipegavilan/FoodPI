@@ -19,6 +19,7 @@
     flex-wrap: wrap;
     grid-column: 1 / -1;
     text-align: center;
+    font-size: 27px;
   }
   .div2{
     display: flex;
@@ -40,7 +41,36 @@
   
   .healthScore {
     display: flex;
-    border-radius: 50px;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px ;
+    color: black;
+    background-color: #36eb09;
+    border: 1px solid #2bdd13;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .healthScore2 {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px ;
+    color: black;
+    background-color: #ddec88;
+    border: 1px solid #d6ee4f;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .healthScore3 {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px ;
+    color: black;
+    background-color: #f75b1d;
+    border: 1px solid #ee6b2f;
+    font-weight: bold;
+    font-size: 20px;
   }
   
   .steps {
@@ -85,3 +115,11 @@
     width: 150px;
     height: 40px;
   }
+
+  .btn button:hover{
+    cursor:pointer;
+    background-color: #d6ee4f;
+    color: #1a202c;
+  }
+
+  

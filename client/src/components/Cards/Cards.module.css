@@ -1,7 +1,7 @@
 .container{
     display: flex;
     flex-wrap: wrap;
-    padding-left: 8vh;
+    justify-content: center;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 15px;

@@ -42,10 +42,13 @@ const getRecipesIdHandler = async(req, res)  =>{
 const postRecipesHandler = async(req, res) =>{
 
     const {title, summary, healthScore, steps, diets, image, create } = req.body;
+   
     try {
+        
         if(!title || !summary || !healthScore || !steps || !diets){
             res.status(400).json("Datos incompletos")
-        } else{
+        }
+        else{
             const newRecipe = await postRecipe(title, summary, healthScore, steps, diets, image);
             res.status(200).json(newRecipe)
         }

@@ -8,4 +8,5 @@ export const FILTER_BY_DIETS = "FILTER_BY_DIETS"
 export const FILTER_BY_HEALTH_SCORE = "FILTER_BY_HEALTH_SCORE"
 export const FILTER_BY_API_OR_BDD ='FILTER_BY_API_OR_BDD'
 export const BACK_FILTER = "BACK_FILTER"
-
+export const FAVORITE = 'FAVORITE'
+export const DELETE = 'DELETE'
