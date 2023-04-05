@@ -14,7 +14,7 @@ import {
 
 export const getRecipes = () => {
   return async function (dispatch) {
-    const allRecipes = await axios.get("http://localhost:3001/recipes");
+    const allRecipes = await axios.get("/recipes");
     const recipes = await allRecipes.data;
     dispatch({
       type: GET_RECIPES,
@@ -25,7 +25,7 @@ export const getRecipes = () => {
 
 export const getDiets = () => {
   return async function (dispatch) {
-    const allDiets = await axios.get("http://localhost:3001/diets");
+    const allDiets = await axios.get("/diets");
     const diets = await allDiets.data;
 
     dispatch({
@@ -37,7 +37,7 @@ export const getDiets = () => {
 
 export const getId = (id) => {
   return async function (dispatch) {
-    const recipeId = await axios.get(`http://localhost:3001/recipes/${id}`);
+    const recipeId = await axios.get(`/recipes/${id}`);
     const idRecipe = await recipeId.data;
 
     dispatch({
@@ -49,7 +49,7 @@ export const getId = (id) => {
 
 export const getSearch = (title) => {
   return async function (dispatch) {
-    const recipeTitle = await axios.get(`http://localhost:3001/recipes?title=${title}`);
+    const recipeTitle = await axios.get(`/recipes?title=${title}`);
     const searchRecipe = recipeTitle.data;
     if(recipeTitle.status === 200){
         console.log("funciona");
@@ -84,7 +84,7 @@ export const filterHealthScore = (payload) => {
 
 export const postRecipes = (payload) => {
   return async function () {
-    let json = await axios.post("http://localhost:3001/recipes", payload);
+    let json = await axios.post("/recipes", payload);
     return json;
   };
 };
