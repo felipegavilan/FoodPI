@@ -7,7 +7,11 @@ const getRecipesHandler = async(req, res)=>{
     const { title } = req.query;
     try {
         const getRecipes = title ? await getRecipesByName(title) : await concatAllRecipes()
+        if(getRecipes.length){
         res.status(200).json(getRecipes)
+        } else{
+            res.status(400).send('The recipe does not exist')
+        }
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -42,11 +46,14 @@ const getRecipesIdHandler = async(req, res)  =>{
 const postRecipesHandler = async(req, res) =>{
 
     const {title, summary, healthScore, steps, diets, image, create } = req.body;
-   
+    
     try {
         
         if(!title || !summary || !healthScore || !steps || !diets){
             res.status(400).json("Datos incompletos")
+        } 
+        if((await getRecipesByName(title)).length){
+            res.status(400).send('The recipe already exists')
         }
         else{
             const newRecipe = await postRecipe(title, summary, healthScore, steps, diets, image);

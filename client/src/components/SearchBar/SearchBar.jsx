@@ -15,10 +15,12 @@ const SearchBar = ({ paginate }) => {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
+    
     if(!title){
       alert("Sorry, write a recipe please")
-    } else{
-
+    }
+   
+    else{
       dispatch(getSearch(title)).then(() => {
       paginate(1);
       });
