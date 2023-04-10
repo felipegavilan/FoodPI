@@ -8,7 +8,7 @@ import Nav from './components/Nav/Nav'
 import Favorites from './components/Favorites/Favorites';
 import axios from 'axios'
 
-axios.defaults.baseURL= 'http://localhost:3001/';
+axios.defaults.baseURL= 'https://foodpi-production-726b.up.railway.app/';
 
 function App() {
   const location = useLocation()
