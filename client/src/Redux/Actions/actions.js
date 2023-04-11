@@ -49,13 +49,17 @@ export const getId = (id) => {
 
 export const getSearch = (title) => {
   return async function (dispatch) {
-    const recipeTitle = await axios.get(`/recipes?title=${title}`);
-    const searchRecipe = recipeTitle.data;
-    
+    try {
+      const recipeTitle = await axios.get(`/recipes?title=${title}`);
+      const searchRecipe = recipeTitle.data;
         dispatch({
           type: GET_NAME,
           payload: searchRecipe,
         });
+    } catch (error) {
+      if(error.response.status === 400)
+       alert(error.response.data)
+    }
   }
 };
 
@@ -82,8 +86,15 @@ export const filterHealthScore = (payload) => {
 
 export const postRecipes = (payload) => {
   return async function () {
-    let json = await axios.post("/recipes", payload);
-    return json;
+    try {
+      let json = await axios.post("/recipes", payload);
+      alert('¡Recipe created successfully!')
+      return json
+    } catch (error) {
+      if(error.response.status === 400){
+        alert(error.response.data)
+      }
+    }
   };
 };
 

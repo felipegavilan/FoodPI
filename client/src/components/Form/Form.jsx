@@ -24,7 +24,6 @@ const Form = () => {
    
     else { 
       dispatch(postRecipes(formCreate))
-      alert('¡Recipe created successfully!')
     }
   };
   
