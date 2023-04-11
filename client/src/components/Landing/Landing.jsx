@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getDiets, getRecipes } from "../../Redux/Actions/actions";
 import style from "../Landing/Landing.module.css";
 import landing from "../../fondo/landing.jpg";
 import gorrito from "../../fondo/gorrito.png"
@@ -8,6 +11,13 @@ const Landing = () => {
   const handlerNavigate = () => {
     navigate("/home");
   };
+  const dispatch = useDispatch(); 
+
+  useEffect(() => {
+    dispatch(getDiets())
+    dispatch(getRecipes())
+    // eslint-disable-next-line 
+  }, []);
   return (
     <div>
       <div className={style.containerDiv}>

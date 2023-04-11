@@ -51,14 +51,12 @@ export const getSearch = (title) => {
   return async function (dispatch) {
     const recipeTitle = await axios.get(`/recipes?title=${title}`);
     const searchRecipe = recipeTitle.data;
-    if(recipeTitle.status === 200){
-        console.log("funciona");
+    
         dispatch({
           type: GET_NAME,
           payload: searchRecipe,
         });
-    }
-  };
+  }
 };
 
 export const filterByName = (payload) => {

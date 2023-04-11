@@ -1,5 +1,5 @@
 import Cards from "../Cards/Cards";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getRecipes,
@@ -16,12 +16,15 @@ import SearchBar from "../SearchBar/SearchBar";
 const Home = () => {
   const dispatch = useDispatch(); 
 
-  useEffect(() => {
+  const handlerReset = () =>{
     dispatch(getDiets())
     dispatch(getRecipes())
-    // eslint-disable-next-line 
-  }, []);
+  }
 
+  window.onload = function(){
+    dispatch(getRecipes())
+    dispatch(getDiets())
+  }
 
   const recipes = useSelector((state) => state.recipes);
   const diets = useSelector((state) => state.diets);
@@ -60,14 +63,11 @@ const Home = () => {
         return null;
     }
   };
-  const handlerBack = (e) =>{
-    const {value} = e.target
-      dispatch(filterByDiets(value))
-  }
+
   return (
     <div className={style.container}>
         <div className={style.btn}>
-        <button value="all" onClick={(e) => handlerBack(e)} >Back</button>
+        <button onClick={handlerReset}>Reset</button>
         </div>
       <div className={style.searchBar}>
         <SearchBar paginate={paginate} />
@@ -75,8 +75,7 @@ const Home = () => {
       <div className={style.containerFilter}>
         <div className={style.containerOrderDiets}>
           <select name="diets" onChange={handlerClick}>
-            <option disabled>Diets</option>
-            <option value="all">All</option>
+            <option disabled selected>Diets</option>
             {diets &&
               diets.map((d) => (
                 <option value={d.name} key={d.id}>
@@ -87,21 +86,21 @@ const Home = () => {
         </div>
         <div className={style.orderAlph}>
           <select name="orderAlph" onChange={handlerClick}>
-            <option disabled>Alphabetical order</option>
+            <option disabled selected>Alphabetical order</option>
             <option value="asc">⬆ a-Z </option>
             <option value="desc">⬇ Z-a </option>
           </select>
         </div>
         <div className={style.orderApiBdd} onChange={handlerClick}>
           <select name="apiBdd">
-            <option disabled>Silter API or DB</option>
+            <option disabled selected>Filter API or DB</option>
             <option value="api">Api</option>
             <option value="bdd">Bdd</option>
           </select>
         </div>
         <div className={style.healthScore}>
           <select name="score" onChange={handlerClick}>
-            <option disabled>Health Score</option>
+            <option disabled selected>Health Score</option>
             <option value="up">⬆ Upward</option>
             <option value="down">⬇ Falling</option>
           </select>
