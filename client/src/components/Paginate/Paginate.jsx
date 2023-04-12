@@ -14,6 +14,7 @@ const Paginate = ({recipesPerPage, recipes, paginate, currentPage, handlerPagPre
           >
             Prev
           </button>
+          {currentPage > pageNum.length ? paginate(1) : null}
           <p className={style.pageNum}>{`${currentPage} of ${pageNum.length}`}</p>
           <button
             onClick={handlerPagNext}
