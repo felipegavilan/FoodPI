@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-image: url('../src/fondo/fondoBlanco.webp');
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .App-logo {
