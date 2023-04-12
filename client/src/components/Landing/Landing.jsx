@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getDiets, getRecipes } from "../../Redux/Actions/actions";
 import style from "../Landing/Landing.module.css";
-import landing from "../../fondo/landing.jpg";
-import gorrito from "../../fondo/gorrito.png"
+import landing from "../../fondo/landing.webp";
+import gorrito from "../../fondo/gorrito.webp"
 
 const Landing = () => {
   const navigate = useNavigate();
