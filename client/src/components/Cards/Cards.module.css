@@ -10,3 +10,14 @@
 .card{
     margin: 7px;
 }
+
+.addFavorite p{
+    font-weight: bold;
+    font-size: large;
+    color: rgb(27, 18, 17);
+    margin: auto;
+}
+
+.addFavorite img{
+    border-radius: 20px
+}
